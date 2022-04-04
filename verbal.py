@@ -1,8 +1,5 @@
-from cProfile import run
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-import threading
-from sys import exit
 from keyboard import is_pressed
 from pyautogui import size
 
