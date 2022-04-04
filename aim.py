@@ -1,4 +1,3 @@
-from time import sleep
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from keyboard import is_pressed
@@ -18,12 +17,14 @@ while True:
     if is_pressed(triggerKey):
         break
 
+# Get target element
 target = driver.find_element_by_xpath(
     '//*[@id="root"]/div/div[4]/div[1]/div/div[1]/div[2]/div/div'
 )
 
-click(target.location["x"], height - target.location["y"])
+click(target.location["x"], target.location["y"] + chromeHeaderSize)
 
+# Click targets
 for _number in range(0, 30):
     target = driver.find_element_by_xpath(
         '//*[@id="root"]/div/div[4]/div[1]/div/div[1]/div/div'
